@@ -81,6 +81,15 @@ namespace To_Do_List.Properties {
         }
         
         /// <summary>
+        ///   System.IO.MemoryStream öğesine benzeyen System.IO.UnmanagedMemoryStream türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream blink {
+            get {
+                return ResourceManager.GetStream("blink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
         internal static System.Drawing.Bitmap x {

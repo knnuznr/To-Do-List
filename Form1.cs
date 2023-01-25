@@ -48,12 +48,14 @@ namespace To_Do_List
 			XmlNodeList checkboxNodes = doc.SelectNodes("CheckboxData/Checkbox");
 			foreach (XmlNode node in checkboxNodes)
 			{
-				CheckBox cb = new CheckBox();
-				cb.Text = node.InnerText;
-				cb.Left = 10;
-				cb.ForeColor = Color.White;
-				cb.Font = new Font("Segoe UI", 12);
-				cb.Top = 10;
+				CheckBox cb = new CheckBox
+				{
+					Text = node.InnerText,
+					Left = 50,
+					ForeColor = Color.White,
+					Font = new Font("Segoe UI", 12),
+					Top = 10
+				};
 				CheckBoxes.Add(cb);
 			}
 		}
@@ -74,12 +76,13 @@ namespace To_Do_List
 		}
 
 		List<CheckBox> CheckBoxes = new List<CheckBox>();
+
 		public void textBox1_KeyUp(object sender, KeyEventArgs e)
 		{
-			int count = 11;
-			if(CheckBoxes.Count >= count)
+			
+			if(CheckBoxes.Count >= 11)
 			{
-				MessageBox.Show("Test");
+				MessageBox.Show("Fazla");
 			}
 			else
 			if (e.KeyCode == Keys.Return)
@@ -90,14 +93,16 @@ namespace To_Do_List
 				}
 				else if(textBox1.Text != "")
 				{
-					CheckBox Mycheckbox = new CheckBox();
-					Mycheckbox.Text = textBox1.Text;
-					Mycheckbox.Height = 50;
-					Mycheckbox.AutoSize = true;
-					Mycheckbox.Width = 100;
-					Mycheckbox.Location = new Point(200, 200);
-					Mycheckbox.ForeColor = Color.White;
-					Mycheckbox.Font = new Font("Segoe UI", 12);
+					CheckBox Mycheckbox = new CheckBox
+					{
+						Text = textBox1.Text,
+						Height = 50,
+						AutoSize = true,
+						Width = 100,
+						Location = new Point(200, 200),
+						ForeColor = Color.White,
+						Font = new Font("Segoe UI", 12)
+					};
 					CheckBoxes.Add(Mycheckbox);
 					int y = 10;
 					int x = 200;
@@ -108,6 +113,7 @@ namespace To_Do_List
 						y += checkbox.Height + 10;
 					}
 					this.Controls.AddRange(CheckBoxes.ToArray());
+					
 					textBox1.Clear();
 				}
 				
@@ -115,14 +121,19 @@ namespace To_Do_List
 		}
 		private void checkbox_CheckedChanged(object sender, EventArgs e)
 		{
+			
 			CheckBox checkbox = sender as CheckBox;
 			if (checkbox.Checked)
 			{
 				checkbox.Font = new Font("Segoe UI", 12, FontStyle.Strikeout);
+				System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+				player.SoundLocation = "C:\\Users\\Kaan UZUNER\\source\\repos\\To-Do-List\\Resources\\blink.wav";
+				player.Play();
 			}
 			else
 			{
 				checkbox.Font = new Font("Segoe UI", 12);
+				
 			}
 		}
 
@@ -130,5 +141,7 @@ namespace To_Do_List
 		{
 			this.Close();
 		}
+
+
 	}
 }

@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -37,12 +38,27 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(191, 386);
+			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.textBox1.ForeColor = System.Drawing.Color.White;
+			this.textBox1.Location = new System.Drawing.Point(173, 400);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(396, 20);
+			this.textBox1.Size = new System.Drawing.Size(450, 22);
 			this.textBox1.TabIndex = 1;
 			this.textBox1.Tag = "";
 			this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(216)))), ((int)(((byte)(185)))));
+			this.label1.Location = new System.Drawing.Point(26, 19);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(84, 22);
+			this.label1.TabIndex = 4;
+			this.label1.Text = "Planned";
 			// 
 			// pictureBox2
 			// 
@@ -69,8 +85,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.textBox1);
@@ -94,6 +111,7 @@
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Label label1;
 	}
 }
 
