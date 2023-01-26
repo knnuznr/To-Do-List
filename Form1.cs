@@ -60,7 +60,7 @@ namespace To_Do_List
 					ForeColor = Color.White,
 					Checked = Convert.ToBoolean(statusNode.InnerText.ToString()),
 					Height = Convert.ToInt32(heightNode.InnerText),
-					Font = new Font("Segoe UI", 12),
+					Font = new Font("Arial Rounded MT Bold", 12),
 				};
 				
 				CheckBoxes.Add(cb);
@@ -127,7 +127,7 @@ namespace To_Do_List
 						Width = 100,
 						Location = new Point(200, 200),
 						ForeColor = Color.White,
-						Font = new Font("Segoe UI", 12)
+						Font = new Font("Arial Rounded MT Bold", 12)
 					};
 					CheckBoxes.Add(Mycheckbox);
 					int x = 250, y = 20;
@@ -150,7 +150,7 @@ namespace To_Do_List
 			CheckBox checkbox = sender as CheckBox;
 			if (checkbox.Checked)
 			{
-				checkbox.Font = new Font("Segoe UI", 12, FontStyle.Strikeout);
+				checkbox.Font = new Font("Arial Rounded MT Bold", 12, FontStyle.Strikeout);
 				System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 				player.SoundLocation = "C:\\Users\\Kaan UZUNER\\source\\repos\\To-Do-List\\Resources\\blink.wav";
 				player.Play();
@@ -161,14 +161,14 @@ namespace To_Do_List
 				{
 					if (node["status"].InnerText == "True")
 					{
-						checkbox.Font = new Font("Segoe UI", 12, FontStyle.Strikeout);
+						checkbox.Font = new Font("Arial Rounded MT Bold", 12, FontStyle.Strikeout);
 					}
 				}
 				doc.Save("checkboxdata.xml");
 			}
 			else
 			{
-				checkbox.Font = new Font("Segoe UI", 12);
+				checkbox.Font = new Font("Arial Rounded MT Bold", 12);
 				XmlDocument doc = new XmlDocument();
 				doc.Load("checkboxdata.xml");
 				XmlNodeList checkboxNodes = doc.SelectNodes("CheckboxData/Checkbox");
@@ -176,7 +176,7 @@ namespace To_Do_List
 				{
 					if (node["status"].InnerText == "False")
 					{
-						checkbox.Font = new Font("Segoe UI", 12);
+						checkbox.Font = new Font("Arial Rounded MT Bold", 12);
 					}
 				}
 				doc.Save("checkboxdata.xml");

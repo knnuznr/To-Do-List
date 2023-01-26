@@ -40,7 +40,7 @@
 			// 
 			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
 			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
 			this.textBox1.ForeColor = System.Drawing.Color.White;
 			this.textBox1.Location = new System.Drawing.Point(173, 400);
 			this.textBox1.Name = "textBox1";
