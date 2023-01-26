@@ -19,7 +19,6 @@ namespace To_Do_List
 			InitializeComponent();
 		}
 		int fMove;
-		
 		int fMouse_X;
 		int fMouse_Y;
 		private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -49,16 +48,25 @@ namespace To_Do_List
 			XmlNodeList checkboxNodes = doc.SelectNodes("CheckboxData/Checkbox");
 			foreach (XmlNode node in checkboxNodes)
 			{
+				XmlNode textNode = node.SelectSingleNode("text");
+				XmlNode locationNode = node.SelectSingleNode("location");
+				XmlNode heightNode = node.SelectSingleNode("height");
+				XmlNode statusNode = node.SelectSingleNode("status");
+
 				CheckBox cb = new CheckBox
 				{
-					Text = node.InnerText,
-					Left = 50,
+					Text = textNode.InnerText,
+					Location = new Point(Convert.ToInt32(locationNode.InnerText.Split(',')[0].Split('=')[1]), Convert.ToInt32(locationNode.InnerText.Split(',')[1].Split('=')[1].Replace("}", ""))),
 					ForeColor = Color.White,
+					Checked = Convert.ToBoolean(statusNode.InnerText.ToString()),
+					Height = Convert.ToInt32(heightNode.InnerText),
 					Font = new Font("Segoe UI", 12),
-					Top = 10
 				};
+				
 				CheckBoxes.Add(cb);
+				this.Controls.AddRange(CheckBoxes.ToArray());
 			}
+
 		}
 
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -69,15 +77,32 @@ namespace To_Do_List
 			foreach (CheckBox cb in CheckBoxes)
 			{
 				XmlElement checkboxElement = doc.CreateElement("Checkbox");
-				checkboxElement.InnerText = cb.Text;
+
+				XmlElement textElement = doc.CreateElement("text");
+				textElement.InnerText = cb.Text;
+				checkboxElement.AppendChild(textElement);
+
+				XmlElement locationElement = doc.CreateElement("location");
+				locationElement.InnerText = cb.Location.ToString();
+				checkboxElement.AppendChild(locationElement);
+
+				XmlElement heightElement = doc.CreateElement("height");
+				heightElement.InnerText = cb.Height.ToString();
+				checkboxElement.AppendChild(heightElement);
+
+				XmlElement statusElement = doc.CreateElement("status");
+				statusElement.InnerText = cb.Checked.ToString();
+				checkboxElement.AppendChild(statusElement);
+
 				root.AppendChild(checkboxElement);
 			}
 			doc.Save("checkboxdata.xml");
 
+
 		}
 
 		List<CheckBox> CheckBoxes = new List<CheckBox>();
-
+		
 		public void textBox1_KeyUp(object sender, KeyEventArgs e)
 		{
 			
@@ -105,8 +130,7 @@ namespace To_Do_List
 						Font = new Font("Segoe UI", 12)
 					};
 					CheckBoxes.Add(Mycheckbox);
-					int y = 10;
-					int x = 200;
+					int x = 250, y = 20;
 					foreach (var checkbox in CheckBoxes)
 					{
 						checkbox.CheckedChanged += checkbox_CheckedChanged;
@@ -122,7 +146,7 @@ namespace To_Do_List
 		}
 		private void checkbox_CheckedChanged(object sender, EventArgs e)
 		{
-			
+
 			CheckBox checkbox = sender as CheckBox;
 			if (checkbox.Checked)
 			{
@@ -130,11 +154,32 @@ namespace To_Do_List
 				System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 				player.SoundLocation = "C:\\Users\\Kaan UZUNER\\source\\repos\\To-Do-List\\Resources\\blink.wav";
 				player.Play();
+				XmlDocument doc = new XmlDocument();
+				doc.Load("checkboxdata.xml");
+				XmlNodeList checkboxNodes = doc.SelectNodes("CheckboxData/Checkbox");
+				foreach (XmlNode node in checkboxNodes)
+				{
+					if (node["status"].InnerText == "True")
+					{
+						checkbox.Font = new Font("Segoe UI", 12, FontStyle.Strikeout);
+					}
+				}
+				doc.Save("checkboxdata.xml");
 			}
 			else
 			{
 				checkbox.Font = new Font("Segoe UI", 12);
-				
+				XmlDocument doc = new XmlDocument();
+				doc.Load("checkboxdata.xml");
+				XmlNodeList checkboxNodes = doc.SelectNodes("CheckboxData/Checkbox");
+				foreach (XmlNode node in checkboxNodes)
+				{
+					if (node["status"].InnerText == "False")
+					{
+						checkbox.Font = new Font("Segoe UI", 12);
+					}
+				}
+				doc.Save("checkboxdata.xml");
 			}
 		}
 
@@ -143,6 +188,9 @@ namespace To_Do_List
 			this.Close();
 		}
 
-
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+			this.MinimizeBox= true;
+		}
 	}
 }
