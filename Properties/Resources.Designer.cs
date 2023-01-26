@@ -61,26 +61,6 @@ namespace To_Do_List.Properties {
         }
         
         /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap alt {
-            get {
-                object obj = ResourceManager.GetObject("alt", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap althover {
-            get {
-                object obj = ResourceManager.GetObject("althover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   System.IO.MemoryStream öğesine benzeyen System.IO.UnmanagedMemoryStream türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream blink {
@@ -102,9 +82,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap cross1 {
+        internal static System.Drawing.Bitmap crossh {
             get {
-                object obj = ResourceManager.GetObject("cross1", resourceCulture);
+                object obj = ResourceManager.GetObject("crossh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -122,19 +102,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap x {
+        internal static System.Drawing.Bitmap minush {
             get {
-                object obj = ResourceManager.GetObject("x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap xhover {
-            get {
-                object obj = ResourceManager.GetObject("xhover", resourceCulture);
+                object obj = ResourceManager.GetObject("minush", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

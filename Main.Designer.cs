@@ -1,6 +1,6 @@
 ﻿namespace To_Do_List
 {
-	partial class Form1
+	partial class Main
 	{
 		/// <summary>
 		///Gerekli tasarımcı değişkeni.
@@ -74,7 +74,7 @@
 			// 
 			// pictureBox2
 			// 
-			this.pictureBox2.Image = global::To_Do_List.Properties.Resources.minus;
+			this.pictureBox2.Image = global::To_Do_List.Properties.Resources.minush;
 			this.pictureBox2.Location = new System.Drawing.Point(750, 9);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(32, 32);
@@ -82,10 +82,11 @@
 			this.pictureBox2.TabIndex = 3;
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+			this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::To_Do_List.Properties.Resources.cross1;
+			this.pictureBox1.Image = global::To_Do_List.Properties.Resources.crossh;
 			this.pictureBox1.Location = new System.Drawing.Point(806, 9);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(32, 32);
@@ -93,6 +94,8 @@
 			this.pictureBox1.TabIndex = 2;
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+			this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+			this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
 			// 
 			// Form1
 			// 

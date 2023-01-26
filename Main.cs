@@ -12,9 +12,9 @@ using System.Windows.Forms;
 namespace To_Do_List
 {
 	
-	public partial class Form1 : Form
+	public partial class Main : Form
 	{
-		public Form1()
+		public Main()
 		{
 			InitializeComponent();
 		}
@@ -207,6 +207,21 @@ namespace To_Do_List
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void pictureBox1_MouseHover(object sender, EventArgs e)
+		{
+			pictureBox1.BackgroundImage = Properties.Resources.cross;
+		}
+
+		private void pictureBox1_MouseEnter(object sender, EventArgs e)
+		{
+			pictureBox1.BackgroundImage = Properties.Resources.cross;
+		}
+
+		private void pictureBox2_MouseEnter(object sender, EventArgs e)
+		{
+			pictureBox2.BackgroundImage = Properties.Resources.minus;
 		}
 
 		private void pictureBox2_Click(object sender, EventArgs e)
