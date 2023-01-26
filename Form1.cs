@@ -62,11 +62,18 @@ namespace To_Do_List
 					Height = Convert.ToInt32(heightNode.InnerText),
 					Font = new Font("Arial Rounded MT Bold", 12),
 				};
-				
+				if(cb.Checked)
+				{
+					cb.Font = new Font("Arial Rounded MT Bold", 12,FontStyle.Strikeout);
+				}
+				else
+				{
+					cb.Font = new Font("Arial Rounded MT Bold", 12);
+				}
 				CheckBoxes.Add(cb);
 				this.Controls.AddRange(CheckBoxes.ToArray());
 			}
-
+			
 		}
 
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -134,6 +141,7 @@ namespace To_Do_List
 					foreach (var checkbox in CheckBoxes)
 					{
 						checkbox.CheckedChanged += checkbox_CheckedChanged;
+						checkbox.GotFocus += Checkbox_GotFocus;
 						checkbox.Location = new Point(x, y);
 						y += checkbox.Height + 10;
 					}
@@ -144,6 +152,15 @@ namespace To_Do_List
 				
 			}
 		}
+		
+		private void Checkbox_GotFocus(object sender, EventArgs e)
+		{
+			CheckBox checkbox = sender as CheckBox;
+			if(checkbox.Focused == true)
+			{
+				textBox1.Focus();
+			}
+		}
 		private void checkbox_CheckedChanged(object sender, EventArgs e)
 		{
 
@@ -151,8 +168,10 @@ namespace To_Do_List
 			if (checkbox.Checked)
 			{
 				checkbox.Font = new Font("Arial Rounded MT Bold", 12, FontStyle.Strikeout);
-				System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-				player.SoundLocation = "C:\\Users\\Kaan UZUNER\\source\\repos\\To-Do-List\\Resources\\blink.wav";
+				System.Media.SoundPlayer player = new System.Media.SoundPlayer
+				{
+					SoundLocation = "C:\\Users\\Kaan UZUNER\\source\\repos\\To-Do-List\\Resources\\blink.wav"
+				};
 				player.Play();
 				XmlDocument doc = new XmlDocument();
 				doc.Load("checkboxdata.xml");
@@ -166,7 +185,7 @@ namespace To_Do_List
 				}
 				doc.Save("checkboxdata.xml");
 			}
-			else
+			else if(checkbox.Checked == false)
 			{
 				checkbox.Font = new Font("Arial Rounded MT Bold", 12);
 				XmlDocument doc = new XmlDocument();
@@ -190,7 +209,7 @@ namespace To_Do_List
 
 		private void pictureBox2_Click(object sender, EventArgs e)
 		{
-			this.MinimizeBox= true;
+			this.WindowState = FormWindowState.Minimized;
 		}
 	}
 }
