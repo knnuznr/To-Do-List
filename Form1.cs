@@ -113,7 +113,7 @@ namespace To_Do_List
 		
 		public void textBox1_KeyUp(object sender, KeyEventArgs e)
 		{
-			if(CheckBoxes.Count >= 11)
+			if(CheckBoxes.Count >= 13)
 			{
 				MessageBox.Show("Fazla");
 			}
