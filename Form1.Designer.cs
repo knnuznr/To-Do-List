@@ -30,6 +30,7 @@
 		{
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -42,7 +43,7 @@
 			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
 			this.textBox1.ForeColor = System.Drawing.Color.White;
-			this.textBox1.Location = new System.Drawing.Point(173, 400);
+			this.textBox1.Location = new System.Drawing.Point(185, 466);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(450, 22);
 			this.textBox1.TabIndex = 1;
@@ -60,24 +61,35 @@
 			this.label1.TabIndex = 4;
 			this.label1.Text = "Planned Tasks";
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(216)))), ((int)(((byte)(185)))));
+			this.label2.Location = new System.Drawing.Point(25, 54);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(167, 22);
+			this.label2.TabIndex = 5;
+			this.label2.Text = "0 of 0 completed.";
+			// 
 			// pictureBox2
 			// 
-			this.pictureBox2.Image = global::To_Do_List.Properties.Resources.alt;
-			this.pictureBox2.Location = new System.Drawing.Point(689, 2);
+			this.pictureBox2.Image = global::To_Do_List.Properties.Resources.minus;
+			this.pictureBox2.Location = new System.Drawing.Point(750, 9);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(41, 39);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
 			this.pictureBox2.TabIndex = 3;
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::To_Do_List.Properties.Resources.x;
-			this.pictureBox1.Location = new System.Drawing.Point(747, 2);
+			this.pictureBox1.Image = global::To_Do_List.Properties.Resources.cross1;
+			this.pictureBox1.Location = new System.Drawing.Point(806, 9);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(41, 39);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
 			this.pictureBox1.TabIndex = 2;
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -87,7 +99,8 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(850, 500);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pictureBox1);
@@ -113,6 +126,7 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
 	}
 }
 

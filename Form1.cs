@@ -40,9 +40,10 @@ namespace To_Do_List
 			fMouse_X = e.X;
 			fMouse_Y = e.Y;
 		}
-		
+		public int count = 0, ccount = 0;
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			
 			XmlDocument doc = new XmlDocument();
 			doc.Load("checkboxdata.xml");
 			XmlNodeList checkboxNodes = doc.SelectNodes("CheckboxData/Checkbox");
@@ -65,6 +66,7 @@ namespace To_Do_List
 				if(cb.Checked)
 				{
 					cb.Font = new Font("Arial Rounded MT Bold", 12,FontStyle.Strikeout);
+					ccount++;
 				}
 				else
 				{
@@ -72,10 +74,11 @@ namespace To_Do_List
 				}
 				CheckBoxes.Add(cb);
 				this.Controls.AddRange(CheckBoxes.ToArray());
+				count = CheckBoxes.Count;
+				
+				label2.Text = count.ToString() + " of " + ccount + " completed.";
 			}
-			
 		}
-
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			XmlDocument doc = new XmlDocument();
@@ -104,15 +107,12 @@ namespace To_Do_List
 				root.AppendChild(checkboxElement);
 			}
 			doc.Save("checkboxdata.xml");
-
-
 		}
 
 		List<CheckBox> CheckBoxes = new List<CheckBox>();
 		
 		public void textBox1_KeyUp(object sender, KeyEventArgs e)
 		{
-			
 			if(CheckBoxes.Count >= 11)
 			{
 				MessageBox.Show("Fazla");
@@ -136,7 +136,9 @@ namespace To_Do_List
 						ForeColor = Color.White,
 						Font = new Font("Arial Rounded MT Bold", 12)
 					};
+					
 					CheckBoxes.Add(Mycheckbox);
+					
 					int x = 250, y = 20;
 					foreach (var checkbox in CheckBoxes)
 					{
@@ -146,13 +148,14 @@ namespace To_Do_List
 						y += checkbox.Height + 10;
 					}
 					this.Controls.AddRange(CheckBoxes.ToArray());
-					
+					count++;
+					label2.Text = count.ToString() + " of " + ccount.ToString() + " completed.";
 					textBox1.Clear();
 				}
 				
 			}
 		}
-		
+
 		private void Checkbox_GotFocus(object sender, EventArgs e)
 		{
 			CheckBox checkbox = sender as CheckBox;
@@ -184,6 +187,8 @@ namespace To_Do_List
 					}
 				}
 				doc.Save("checkboxdata.xml");
+				ccount++;
+				label2.Text = count.ToString() + " of " + ccount.ToString() + " completed.";
 			}
 			else if(checkbox.Checked == false)
 			{
@@ -199,6 +204,8 @@ namespace To_Do_List
 					}
 				}
 				doc.Save("checkboxdata.xml");
+				ccount--;
+				label2.Text = count.ToString() + " of " + ccount.ToString() + " completed.";
 			}
 		}
 
