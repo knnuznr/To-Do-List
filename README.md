@@ -3,4 +3,4 @@
 This application stores your to-do and shows it when you want to see it later.
 
 # Known Bugs
-__Status added but not working__
+~~Status added but not working~~
