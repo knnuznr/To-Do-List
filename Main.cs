@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace To_Do_List
 {
-	
 	public partial class Main : Form
 	{
 		public Main()
@@ -21,7 +20,7 @@ namespace To_Do_List
 		int fMove;
 		int fMouse_X;
 		int fMouse_Y;
-		private void Form1_MouseMove(object sender, MouseEventArgs e)
+		private void Main_MouseMove(object sender, MouseEventArgs e)
 		{
 			if (fMove == 1)
 			{
@@ -29,19 +28,19 @@ namespace To_Do_List
 			}
 		}
 
-		private void Form1_MouseUp(object sender, MouseEventArgs e)
+		private void Main_MouseUp(object sender, MouseEventArgs e)
 		{
 			fMove = 0;
 		}
 
-		private void Form1_MouseDown(object sender, MouseEventArgs e)
+		private void Main_MouseDown(object sender, MouseEventArgs e)
 		{
 			fMove = 1;
 			fMouse_X = e.X;
 			fMouse_Y = e.Y;
 		}
 		public int count = 0, ccount = 0;
-		private void Form1_Load(object sender, EventArgs e)
+		private void Main_Load(object sender, EventArgs e)
 		{
 			
 			XmlDocument doc = new XmlDocument();
@@ -76,10 +75,10 @@ namespace To_Do_List
 				this.Controls.AddRange(CheckBoxes.ToArray());
 				count = CheckBoxes.Count;
 				
-				label2.Text = count.ToString() + " of " + ccount + " completed.";
+				label2.Text = count.ToString() + " of " + ccount.ToString() + " completed.";
 			}
 		}
-		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+		private void Main_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			XmlDocument doc = new XmlDocument();
 			XmlElement root = doc.CreateElement("CheckboxData");
@@ -207,21 +206,6 @@ namespace To_Do_List
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
 			this.Close();
-		}
-
-		private void pictureBox1_MouseHover(object sender, EventArgs e)
-		{
-			pictureBox1.BackgroundImage = Properties.Resources.cross;
-		}
-
-		private void pictureBox1_MouseEnter(object sender, EventArgs e)
-		{
-			pictureBox1.BackgroundImage = Properties.Resources.cross;
-		}
-
-		private void pictureBox2_MouseEnter(object sender, EventArgs e)
-		{
-			pictureBox2.BackgroundImage = Properties.Resources.minus;
 		}
 
 		private void pictureBox2_Click(object sender, EventArgs e)

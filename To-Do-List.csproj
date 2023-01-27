@@ -102,11 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\blink.wav" />
+    <Content Include="Resources\crossh.png" />
+    <Content Include="Resources\minush.png" />
     <Content Include="to-do-list.ico" />
-    <None Include="Resources\minush.png" />
-    <None Include="Resources\crossh.png" />
-    <None Include="Resources\minus.png" />
-    <None Include="Resources\cross.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

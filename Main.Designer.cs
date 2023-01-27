@@ -82,7 +82,6 @@
 			this.pictureBox2.TabIndex = 3;
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-			this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
 			// 
 			// pictureBox1
 			// 
@@ -94,10 +93,8 @@
 			this.pictureBox1.TabIndex = 2;
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-			this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-			this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
 			// 
-			// Form1
+			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,14 +106,14 @@
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.textBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "Form1";
+			this.Name = "Main";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Form1";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-			this.Load += new System.EventHandler(this.Form1_Load);
-			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+			this.Text = "To Do";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+			this.Load += new System.EventHandler(this.Main_Load);
+			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Main_MouseDown);
+			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Main_MouseMove);
+			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Main_MouseUp);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
